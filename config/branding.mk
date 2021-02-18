@@ -1,4 +1,4 @@
-GET_VERSION := vendor/descendant/build/tools/getversion.py
+GET_VERSION := vendor/ascendant/build/tools/getversion.py
 DESCENDANT_VERNUM := $(shell $(GET_VERSION) vernum)
 DESCENDANT_DISH := $(shell $(GET_VERSION) dish)
 BUILD_TYPE := $(shell $(GET_VERSION) buildtype)

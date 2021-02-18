@@ -1,5 +1,5 @@
 # Bring in Qualcomm helper macros
-include vendor/descendant/build/core/qcom_utils.mk
+include vendor/ascendant/build/core/qcom_utils.mk
 
 # Platform names
 MSMNILE := msmnile #SM8150
@@ -110,4 +110,4 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
     vendor/qcom/opensource/commonsys/system/bt/conf
 endif #TARGET_USE_QTI_BT_STACK
-include vendor/descendant/build/core/qcom_target.mk
+include vendor/ascendant/build/core/qcom_target.mk

@@ -11,10 +11,6 @@ PRODUCT_PACKAGES += \
     SystemNightOverlay \
     SystemUINightOverlay
 
-# Fries
-#PRODUCT_PACKAGES += \
-#    DescendantFries
-
 # ThemePicker
 PRODUCT_PACKAGES += \
     ThemePicker \

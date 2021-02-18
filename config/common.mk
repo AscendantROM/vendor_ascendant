@@ -1,5 +1,5 @@
 ifeq ($(PRODUCT_USES_QCOM_HARDWARE),true)
-include vendor/descendant/config/ProductConfigQcom.mk
+include vendor/ascendant/config/ProductConfigQcom.mk
 endif
 
 PRODUCT_SOONG_NAMESPACES += $(PATHMAP_SOONG_NAMESPACES)
@@ -14,19 +14,19 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/descendant/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/descendant/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+    vendor/ascendant/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/ascendant/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/ascendant/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
-    vendor/descendant/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
-    vendor/descendant/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+    vendor/ascendant/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/ascendant/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/ascendant/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
 #Prebuilts
-include vendor/descendant/prebuilt/pre.mk
+include vendor/ascendant/prebuilt/pre.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
@@ -51,12 +51,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifneq ($(filter tenderloin,$(TARGET_PRODUCT)),)
 ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    vendor/descendant/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/ascendant/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
+    vendor/ascendant/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 else
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
-    vendor/descendant/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
+    vendor/ascendant/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
+    vendor/ascendant/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 endif
 endif
 
@@ -65,28 +65,28 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Common
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/etc/permissions/privapp-permissions-descendant.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-descendant.xml \
-    vendor/descendant/prebuilt/common/etc/permissions/privapp-permissions-descendant-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-descendant-product.xml \
-    vendor/descendant/prebuilt/common/etc/permissions/org.descendant.descendant.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.descendant.descendant.xml \
-    vendor/descendant/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
+    vendor/ascendant/prebuilt/common/etc/permissions/privapp-permissions-descendant.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-descendant.xml \
+    vendor/ascendant/prebuilt/common/etc/permissions/privapp-permissions-descendant-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-descendant-product.xml \
+    vendor/ascendant/prebuilt/common/etc/permissions/org.descendant.descendant.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.descendant.descendant.xml \
+    vendor/ascendant/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
 # Center
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/etc/permissions/privapp-permissions-center.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-center.xml
+    vendor/ascendant/prebuilt/common/etc/permissions/privapp-permissions-center.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-center.xml
 
 # Fries
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/etc/permissions/privapp-permissions-fries.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-fries.xml \
-    vendor/descendant/prebuilt/common/etc/sysconfig/descendantfries-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/descendantfries-hiddenapi-package-whitelist.xml
+    vendor/ascendant/prebuilt/common/etc/permissions/privapp-permissions-fries.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-fries.xml \
+    vendor/ascendant/prebuilt/common/etc/sysconfig/descendantfries-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/descendantfries-hiddenapi-package-whitelist.xml
 
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/etc/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml
+    vendor/ascendant/prebuilt/common/etc/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml
 
 # Weather client
 #PRODUCT_COPY_FILES += \
-#    vendor/descendant/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
-#    vendor/descendant/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
+#    vendor/ascendant/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
+#    vendor/ascendant/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
 
 # Set custom volume steps
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -95,12 +95,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Turbo
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/etc/permissions/privapp-permissions-turbo.xml:system/etc/permissions/privapp-permissions-turbo.xml \
-    vendor/descendant/prebuilt/common/etc/sysconfig/turbo.xml:system/etc/sysconfig/turbo.xml
+    vendor/ascendant/prebuilt/common/etc/permissions/privapp-permissions-turbo.xml:system/etc/permissions/privapp-permissions-turbo.xml \
+    vendor/ascendant/prebuilt/common/etc/sysconfig/turbo.xml:system/etc/sysconfig/turbo.xml
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/descendant/config/permissions/custom-power-whitelist.xml:system/etc/sysconfig/custom-power-whitelist.xml
+    vendor/ascendant/config/permissions/custom-power-whitelist.xml:system/etc/sysconfig/custom-power-whitelist.xml
 
 # Clang
 ifeq ($(TARGET_USE_LATEST_CLANG),true)
@@ -108,7 +108,7 @@ ifeq ($(TARGET_USE_LATEST_CLANG),true)
 endif
 
 # Copy all custom init rc files
-$(foreach f,$(wildcard vendor/descendant/prebuilt/common/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/ascendant/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Disable Rescue Party
@@ -127,8 +127,8 @@ endif
 
 # Markup libs
 PRODUCT_COPY_FILES += \
-    vendor/descendant/prebuilt/common/lib/libsketchology_native.so:system/lib/libsketchology_native.so \
-    vendor/descendant/prebuilt/common/lib64/libsketchology_native.so:system/lib64/libsketchology_native.so
+    vendor/ascendant/prebuilt/common/lib/libsketchology_native.so:system/lib/libsketchology_native.so \
+    vendor/ascendant/prebuilt/common/lib64/libsketchology_native.so:system/lib64/libsketchology_native.so
 
 # We modify several neverallows, so let the build proceed
 ifneq ($(TARGET_BUILD_VARIANT),user)
@@ -136,14 +136,14 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 endif
 
 # Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/descendant/overlay/common
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/descendant/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/ascendant/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/ascendant/overlay/common
 
 # Packages
-include vendor/descendant/config/packages.mk
+include vendor/ascendant/config/packages.mk
 
 # Branding
-include vendor/descendant/config/branding.mk
+include vendor/ascendant/config/branding.mk
 
 # Offline charger
 PRODUCT_PACKAGES += \
@@ -153,7 +153,7 @@ PRODUCT_PACKAGES += \
 # Fonts
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/../fonts/ttf,$(TARGET_COPY_OUT_PRODUCT)/fonts)
 PRODUCT_COPY_FILES += \
-    vendor/descendant/fonts/ttf/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+    vendor/ascendant/fonts/ttf/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
 # Navigation
 PRODUCT_PACKAGES += \
@@ -184,4 +184,4 @@ PRODUCT_PRODUCT_PROPERTIES += \
 endif
 
 #Build fonts
-include vendor/descendant/config/fonts.mk
+include vendor/ascendant/config/fonts.mk

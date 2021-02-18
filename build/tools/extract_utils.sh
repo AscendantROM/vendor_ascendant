@@ -907,16 +907,16 @@ function oat2dex() {
     local HOST="$(uname)"
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$DESCENDANT_ROOT"/vendor/descendant/build/tools/smali/baksmali.jar
-        export SMALIJAR="$DESCENDANT_ROOT"/vendor/descendant/build/tools/smali/smali.jar
+        export BAKSMALIJAR="$DESCENDANT_ROOT"/vendor/ascendant/build/tools/smali/baksmali.jar
+        export SMALIJAR="$DESCENDANT_ROOT"/vendor/ascendant/build/tools/smali/smali.jar
     fi
 
     if [ -z "$VDEXEXTRACTOR" ]; then
-        export VDEXEXTRACTOR="$DESCENDANT_ROOT"/vendor/descendant/build/tools/"$HOST"/vdexExtractor
+        export VDEXEXTRACTOR="$DESCENDANT_ROOT"/vendor/ascendant/build/tools/"$HOST"/vdexExtractor
     fi
 
     if [ -z "$CDEXCONVERTER" ]; then
-        export CDEXCONVERTER="$DESCENDANT_ROOT"/vendor/descendant/build/tools/"$HOST"/compact_dex_converter
+        export CDEXCONVERTER="$DESCENDANT_ROOT"/vendor/ascendant/build/tools/"$HOST"/compact_dex_converter
     fi
 
     # Extract existing boot.oats to the temp folder
@@ -1183,7 +1183,7 @@ function extract() {
             # If OTA is block based, extract it.
             elif [ -a "$DUMPDIR"/system.new.dat ]; then
                 echo "Converting system.new.dat to system.img"
-                python "$DESCENDANT_ROOT"/vendor/descendant/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
+                python "$DESCENDANT_ROOT"/vendor/ascendant/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
                 rm -rf "$DUMPDIR"/system.new.dat "$DUMPDIR"/system
                 mkdir "$DUMPDIR"/system "$DUMPDIR"/tmp
                 echo "Requesting sudo access to mount the system.img"

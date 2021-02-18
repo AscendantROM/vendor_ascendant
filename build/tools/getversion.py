@@ -17,7 +17,7 @@ def get_build_type(target_product):
     build_type = os.environ['BUILD_TYPE'].strip() if 'BUILD_TYPE' in os.environ else ''
     current_device = target_product.split("_")[1]
     if build_type == 'OFFICIAL' or build_type == 'MASHED':
-        with open("vendor/descendant/descendant.devices", "r") as read_file:
+        with open("vendor/ascendant/descendant.devices", "r") as read_file:
             devices = read_file.read().splitlines()
             if current_device not in devices:
                 build_type = 'Community'
@@ -49,7 +49,7 @@ def main():
     ensure_path()
     query = sys.argv[1]
     data = {}
-    with open("vendor/descendant/version.json", "r") as read_file:
+    with open("vendor/ascendant/version.json", "r") as read_file:
         data = json.load(read_file)
 
     target_product = os.environ['TARGET_PRODUCT'] if 'TARGET_PRODUCT' in os.environ else ''
@@ -62,7 +62,7 @@ def main():
     if query == 'buildtype':
         print(get_build_type(target_product))
     elif query == 'version':
-        print("{}-{}-{}-{}".format(data['product'], "XI", date,get_build_type(target_product)))
+        print("{}-{}-{}-{}".format(data['product'], "ADORA", date,get_build_type(target_product)))
     else:
         print(data[query] if query in data.keys() else '')
 

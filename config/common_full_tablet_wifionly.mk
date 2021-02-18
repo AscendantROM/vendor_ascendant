@@ -1,2 +1,2 @@
 # Inherit common stuff
-$(call inherit-product, vendor/descendant/config/common.mk)
+$(call inherit-product, vendor/ascendant/config/common.mk)
