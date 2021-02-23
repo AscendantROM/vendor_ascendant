@@ -17,7 +17,7 @@ def get_build_type(target_product):
     build_type = os.environ['BUILD_TYPE'].strip() if 'BUILD_TYPE' in os.environ else ''
     current_device = target_product.split("_")[1]
     if build_type == 'OFFICIAL' or build_type == 'MASHED':
-        with open("vendor/ascendant/descendant.devices", "r") as read_file:
+        with open("vendor/ascendant/ascendant.devices", "r") as read_file:
             devices = read_file.read().splitlines()
             if current_device not in devices:
                 build_type = 'Community'
